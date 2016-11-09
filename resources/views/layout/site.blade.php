@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Forum :: Home Page</title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Bootstrap -->
         <link href="{{asset("css/bootstrap.min.css")}}" rel="stylesheet">
 
@@ -18,7 +18,11 @@
         <link href="{{asset("css/font-awesome.min.css")}}" rel="stylesheet">
         <!-- CSS STYLE-->
         <link href="{{asset("css/style.css")}}" rel="stylesheet">
-
+        <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
     </head>
     <body>
 
@@ -59,10 +63,20 @@
                                 <a data-toggle="dropdown" href="#"><img src="images/avatar.jpg" alt="" /></a> <b class="caret"></b>
                                 <div class="status green">&nbsp;</div>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-3" href="#">Log Out</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-4" href="04_new_account.html">Create account</a></li>
+                                    @if (Auth::guest())
+                                        <li role="presentation"><a role="menuitem" tabindex="-3" href="{{ url('/login') }}">Log In</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-4" href="{{ url('/register') }}">Create account</a></li>
+                                    @else
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Profile</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-2" href="#">Inbox</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-3"href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">Log Out</a></li>
+                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                         </form>
+                                    @endif
+                                   
                                 </ul>
                             </div>
                             
