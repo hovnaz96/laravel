@@ -1,6 +1,10 @@
 @extends('layout/site')
 @section('content')
-
+<style>
+    .help-block{
+        margin:0px;
+    }
+</style>
 <section class="content">
     <div class="container">
         <div class="row">
@@ -51,49 +55,53 @@
                                     
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 {{ $errors->has('firstname') ? ' has-error' : '' }}">
-                                            <input type="text" placeholder="First Name" name="firstname" class="form-control" value="{{ old('firstname') }}" />
-                                            @if ($errors->has('firstname'))
+                                             @if ($errors->has('firstname'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('firstname') }}</strong>
                                                 </span>
                                             @endif
+                                            <input type="text" placeholder="First Name" name="firstname" class="form-control" value="{{ old('firstname') }}" />
+                                           
                                         </div>
                                         <div class="col-lg-6 col-md-6 {{ $errors->has('lastname') ? ' has-error' : '' }}">
-                                            <input type="text" placeholder="Last Name" name="lastname" class="form-control" value="{{ old('lastname') }}" />
                                             @if ($errors->has('lastname'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('lastname') }}</strong>
                                                 </span>
                                             @endif
+                                            <input type="text" placeholder="Last Name" name="lastname" class="form-control" value="{{ old('lastname') }}" />
                                         </div>
                                     </div>
                                     <div class = 'row'>
                                   <div class="col-lg-6 col-md-6 {{ $errors->has('username') ? ' has-error' : '' }}">
-                                            <input type="text" placeholder="Username" name="username" class="form-control" value="{{ old('username') }}" />
-                                            @if ($errors->has('username'))
+                                        @if ($errors->has('username'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('username') }}</strong>
                                                 </span>
                                             @endif
+                                      <input type="text" placeholder="Username" name="username" class="form-control" value="{{ old('username') }}" />
+                                            
                                         </div>
                                         <div class="col-lg-6 col-md-6 {{ $errors->has('email') ? ' has-error' : '' }}">
-                                            <input type="text" placeholder="Email" name="email" class="form-control" value="{{ old('email') }}" />
                                             @if ($errors->has('email'))
                                                 <span class="help-block">
                                                     <strong>{{ $errors->first('email') }}</strong>
                                                 </span>
                                             @endif
+                                            <input type="text" placeholder="Email" name="email" class="form-control" value="{{ old('email') }}" />
+                                            
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-lg-6 col-md-6{{ $errors->has('password') ? ' has-error' : '' }}">
-                                            <input  placeholder="Password" id="password" type="password" class="form-control" name="password" >
-                                            @if ($errors->has('password'))
+                                             @if ($errors->has('password'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('password') }}</strong>
                                             </span>
                                             @endif
+                                            <input  placeholder="Password" id="password" type="password" class="form-control" name="password" >
+                                           
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <input type="password" placeholder="Retype Password" class="form-control" id="pass2"  
@@ -175,7 +183,7 @@
 
 
 
-                        <!-- acc section -->
+<!--                         acc section 
                         <div class="accsection survey">
                             <div class="acccap">
                                 <div class="userinfo pull-left">&nbsp;</div>
@@ -272,7 +280,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>  
-                        </div><!-- acc section END -->
+                        </div> acc section END -->
 
 
 
@@ -283,12 +291,6 @@
                             <div class="acccap">
                                 <div class="userinfo pull-left">&nbsp;</div>
                                 <div class="posttext pull-left">
-                                    <div class="htext">
-                                        <h3>Social Networks ( Optional )</h3>
-                                    </div>
-                                    <div class="hnotice">
-                                        Link Social Networks and Earn this Badge : <img src="images/icon6.jpg" alt="" />
-                                    </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -335,7 +337,7 @@
                             </div>
 
                             <div class="pull-right postreply">
-                                <div class="pull-left smile"><a href="#"><i class="fa fa-smile-o"></i></a></div>
+                                <div class="pull-left smile"><a href="javascript:void(0)"><i class="fa fa-smile-o"></i></a></div>
                                 <div class="pull-left"><button type="submit" class="btn btn-primary">Sign Up</button></div>
                                 <div class="clearfix"></div>
                             </div>

@@ -2,6 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/project/resources/views/layout/site.blade.php</file>
+            <file>file:/C:/project/routes/web.php</file>
+            <file>file:/C:/project/app/Http/Controllers/HomeController.php</file>
+            <file>file:/C:/project/resources/views/login.blade.php</file>
+            <file>file:/C:/project/app/Http/Controllers/newTopic.php</file>
+            <file>file:/C:/project/resources/views/page.blade.php</file>
+            <file>file:/C:/project/resources/views/newtopic.blade.php</file>
+            <file>file:/C:/project/resources/views/index.blade.php</file>
+            <file>file:/C:/project/app/Http/Controllers/IndexController.php</file>
+        </group>
     </open-files>
 </project-private>

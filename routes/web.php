@@ -17,4 +17,5 @@ Route::get("/",'IndexController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/newtopic', 'NewTopic@index');
+Route::post('/sendreply', 'NewTopic@sendreply');
